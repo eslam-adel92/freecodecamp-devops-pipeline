@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-            cd ./backend && npm install
-            cd ./frontend && npm install
+            cd ./backend && npm install && cd -
+            cd ./frontend && npm install && cd -
       - run: 
             npm ci  # Clean install of dependencies
 

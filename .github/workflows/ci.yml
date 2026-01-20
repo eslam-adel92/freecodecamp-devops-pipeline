@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-local
     steps:
       - uses: actions/checkout@v3
-      - run: npm ci  # Clean install of dependencies
+      - run: cd ./backend && npm install && cd - && npm ci  # Clean install of dependencies
 
   test:
     needs: install  # This job depends on the install job finishing

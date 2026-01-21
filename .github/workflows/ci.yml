@@ -11,10 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-            cd ./backend && npm install && cd -
-            cd ./frontend && npm install && cd -
-      - run: 
-            npm ci  # Clean install of dependencies
+            cd ./backend && npm install && npm ci && cd -
+      - run: |
+            cd ./frontend && npm install && npm ci && cd -
+      # - run: 
+      #       npm ci  # Clean install of dependencies
 
   test:
     needs: install  # This job depends on the install job finishing
